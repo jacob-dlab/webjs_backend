@@ -6,6 +6,8 @@ import com.example.javscript_class.service.AgeCalculationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api")
@@ -18,5 +20,10 @@ public class AgeCalculationController {
     @PostMapping("/calculate-age")
     public AgeResponse calculateAge(@RequestBody AgeRequest request) {
         return ageCalculationService.calculateFutureAge(request);
+    }
+
+    @GetMapping("/all-responses")
+    public List<AgeResponse> getAllResponse(){
+        return ageCalculationService.getAllResponses();
     }
 }

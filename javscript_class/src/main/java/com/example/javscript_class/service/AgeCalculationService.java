@@ -13,6 +13,7 @@ public class AgeCalculationService {
     private final List<AgeResponse> responseList = new ArrayList<>();
 
     public AgeResponse calculateFutureAge(AgeRequest request) {
+        System.out.println("-------------------------------");
         System.out.println("Received Request:");
         System.out.println("Name: " + request.getName());
         System.out.println("Age: " + request.getAge());
@@ -26,16 +27,20 @@ public class AgeCalculationService {
 
         responseList.add(response);
 
-        System.out.println("Stored responses:");
-        for (AgeResponse res : responseList) {
-            System.out.println("---------------");
-            System.out.println("Name: " + res.getName());
-            System.out.println("School: " + res.getSchool());
-            System.out.println("Future Age: " + res.getFutureAge());
-        }
-        System.out.println();
+//        System.out.println("Stored responses:");
+//        for (AgeResponse res : responseList) {
+//            System.out.println("---------------");
+//            System.out.println("Name: " + res.getName());
+//            System.out.println("School: " + res.getSchool());
+//            System.out.println("Future Age: " + res.getFutureAge());
+//        }
+//        System.out.println();
 
         return response;
+    }
+
+    public List<AgeResponse> getAllResponses(){
+        return responseList;
     }
 
 
